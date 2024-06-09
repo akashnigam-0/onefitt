@@ -1,0 +1,346 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Basic reset */
+body, h1, h2, h3, p, ul, li, a, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: white;
+  position: relative;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.navbar .nav-links li {
+  margin-left: 1rem;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+  color: #ffeb3b; /* Yellow on hover */
+}
+
+.navbar .icons {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .icon {
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.navbar .icon:hover {
+  transform: scale(1.2); /* Slightly enlarge on hover */
+}
+/* Additional Navbar Styling for Cart Count */
+.navbar .icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .icon span {
+  position: relative;
+}
+
+.navbar .icon span:after {
+  content: attr(data-count);
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: red;
+  color: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+/* Banner Styling */
+.banner {
+  position: relative;
+  background: #2e7d32; /* Dark green */
+  color: white;
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+}
+
+.banner .highlight {
+  font-size: 1.5rem;
+  color: #ffeb3b; /* Yellow */
+}
+
+.banner .shop-now-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: white;
+  background: #3b7f3b; /* Olive green */
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.banner .shop-now-btn:hover {
+  background: #2e7d32; /* Darker green on hover */
+}
+
+/* Category Selector Styling */
+.category-selector {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.category-selector h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.category-selector h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.category-selector .slider-container {
+  max-width: 100%;
+}
+
+.category-selector .slick-prev:before, .category-selector .slick-next:before {
+  color: #3b7f3b; /* Olive green */
+}
+
+.category-selector .category-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.category-selector .category-buttons button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  background: olive;
+  color: white;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+.category-selector .category-buttons button:hover {
+  background: #3b7f3b; /* Darker olive on hover */
+}
+
+/* Meal List Styling */
+.meal-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.meal-item {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  flex: 1 1 calc(50% - 1.5rem);
+  box-sizing: border-box;
+  text-align: center;
+  background: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.meal-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.meal-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.meal-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.meal-details .price {
+  font-size: 1.2rem;
+  color: olive;
+}
+
+.meal-details .add-to-cart-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  background: olive;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.meal-details .add-to-cart-btn:hover {
+  background: #3b7f3b; /* Darker olive on hover */
+}
+
+/* Footer Styling */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: olive;
+  color: white;
+}
+
+.footer .shop-now-footer-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: white;
+  background: green;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.footer .shop-now-footer-btn:hover {
+  background: #2e7d32; /* Darker green on hover */
+}
+/* Cart Styling */
+.cart {
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 33%;
+  height: 100%;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.cart h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.cart .cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cart .cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.cart .cart-item .details {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.cart .cart-item .remove-btn {
+  background: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.cart .total {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.cart .close-btn {
+  background: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+}
+/* Add this to your global CSS or Navbar component styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.modal input {
+  margin-bottom: 10px;
+}
+
+.modal button {
+  margin-top: 10px;
+}
